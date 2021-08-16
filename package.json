@@ -4,7 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon --exec babel-node src/index.js"
+    "dev": "nodemon --exec babel-node src/index.js",
+    "clean": "rm -rf ./build && mkdir build",
+    "prebuild": "npm run clean",
+    "build": "babel src -d ./build --ignore ./node_modules",
+    "db:setup": "sequelize db:create",
+    "db:migrate:up": "sequelize db:migrate",
+    "db:migrate:down": "sequelize db:migrate:undo:all",
+    "db:refresh": "npm run db:migrate:down && npm run db:migrate:up"
   },
   "keywords": [],
   "author": "",

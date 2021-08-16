@@ -1,8 +1,0 @@
-const path = require('path');
-
-module.exports = {
-    'config': path.reslove('src/db', 'config.js'),
-    'models-path': path.reslove('src/db', 'models'),
-    'seeders-path': path.reslove('src/db', 'seeders'),
-    'migrations-path': path.reslove('src/db', 'migrations')
-}
